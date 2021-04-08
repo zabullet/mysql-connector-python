@@ -543,7 +543,7 @@ class CMySQLCursor(MySQLCursorAbstract):
                 if self._nextrow and not self._nextrow[0] and \
                     not self._cnx.more_results:
                     self._cnx.free_result()
-            else:
+            elif rows:
                 self._nextrow = (None, None)
 
         if not rows:
